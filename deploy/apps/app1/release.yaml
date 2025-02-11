@@ -18,8 +18,8 @@ spec:
       - name: SOME_ENV_VAR
         value: "yup"
     image:
-      repository: ghcr.io/6j0-org/app1 # {"$imagepolicy": "app1:app1:name"}
-      tag: sha-4500bf8 # {"$imagepolicy": "app1:app1:name"}
+      repository: ghcr.io/6j0-org/app1 # {"$imagepolicy": "kube-system:app1:name"}
+      tag: sha-4500bf8 # {"$imagepolicy": "kube-system:app1:name"}
 #    imagePullSecrets:
 #      - name: gitlab-auth
     ingress:
