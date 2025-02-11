@@ -3,6 +3,8 @@ kind: ImageUpdateAutomation
 metadata:
   name: flux-system
   namespace: flux-system
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
 spec:
   git:
     checkout:

@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: app1
   labels:
-    toolkit.fluxcd.io/tenant: ops
+    toolkit.fluxcd.io/tenant: sre-team
