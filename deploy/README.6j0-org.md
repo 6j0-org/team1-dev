@@ -35,6 +35,11 @@ This repo was created from https://github.com/fluxcd/flux2-kustomize-helm-exampl
        --path=deploy \
        --read-write-key
    ```
+1. TODO: Create a webhook so ghcr.io notifies flux immediately when a new image is published. See https://fluxcd.io/flux/guides/image-update/#trigger-image-updates-with-webhooks
+   ```
+   TOKEN=$(head -c 12 /dev/urandom | shasum | cut -d ' ' -f1)
+   kubectl -n flux-system create secret generic webhook-token --from-literal=token=$TOKEN
+   ```
 1. Download keys.txt from 1password - you can find it in the K8s repo, named "sops keys.txt".
 1. Move it to the appropriate directory (see https://github.com/getsops/sops?tab=readme-ov-file#22encrypting-using-age):
    > WARNING: If you already have a keys.txt file in your sops age directory, you should probably skip this step.
