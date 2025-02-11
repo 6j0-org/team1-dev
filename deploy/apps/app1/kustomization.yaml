@@ -11,3 +11,5 @@ resources:
   # - ../gitlab-auth.secret.yaml
 
   - release.yaml
+  - imagepolicy.yaml
+  - imagerepository.yaml

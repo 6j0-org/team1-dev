@@ -32,7 +32,8 @@ This repo was created from https://github.com/fluxcd/flux2-kustomize-helm-exampl
        --owner=6j0-org \
        --repository=${kind_cluster_name} \
        --branch="${flux2_branch}" \
-       --path=deploy
+       --path=deploy \
+       --read-write-key
    ```
 1. Download keys.txt from 1password - you can find it in the K8s repo, named "sops keys.txt".
 1. Move it to the appropriate directory (see https://github.com/getsops/sops?tab=readme-ov-file#22encrypting-using-age):
