@@ -1,0 +1,37 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: app1
+  namespace: app1
+spec:
+  chart:
+    spec:
+      chart: app
+      version: '0.4.0'
+      sourceRef:
+        kind: HelmRepository
+        name: devopscoop
+        namespace: default
+  interval: 10m
+  values:
+    env:
+      - name: SOME_ENV_VAR
+        value: "yup"
+    image:
+      repository: ghcr.io/6j0-org/app1
+      tag: sha-4500bf8
+#    imagePullSecrets:
+#      - name: gitlab-auth
+    ingress:
+      enabled: true
+      hosts:
+        - host: app1.dev.6j0.org
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+      tls:
+        - hosts:
+            - app1.dev.6j0.org
+          secretName: app1-tls
+    service:
+      port: 5000
