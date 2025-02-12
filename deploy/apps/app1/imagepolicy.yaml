@@ -9,6 +9,7 @@ spec:
     pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
   imageRepositoryRef:
     name: app1
+    namespace: flux-system
   policy:
     numerical:
       order: asc
