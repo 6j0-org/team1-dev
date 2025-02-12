@@ -4,3 +4,10 @@ metadata:
   name: app1
   labels:
     toolkit.fluxcd.io/tenant: sre-team
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: evanstest2
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
