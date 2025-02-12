@@ -19,9 +19,9 @@ spec:
         value: "yup"
     image:
       repository: ghcr.io/6j0-org/app1 # {"$imagepolicy": "flux-system:app1:name"}
-      tag: sha-4500bf8 # {"$imagepolicy": "flux-system:app1:tag"}
-#    imagePullSecrets:
-#      - name: gitlab-auth
+      tag: dev-40eb34a-1739300409 # {"$imagepolicy": "flux-system:app1:tag"}
+      #    imagePullSecrets:
+      #      - name: gitlab-auth
     ingress:
       enabled: true
       hosts:
