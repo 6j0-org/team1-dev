@@ -11,3 +11,4 @@ resources:
   # - ../gitlab-auth.secret.yaml
 
   - release.yaml
+  - evanstest.yaml
