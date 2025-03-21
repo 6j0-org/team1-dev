@@ -10,9 +10,8 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: ghapp-secret
-  url: https://github.com/6j0-org/team1-dev
-  provider: github
+    name: flux-system
+  url: ssh://git@github.com/6j0-org/team1-dev
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
