@@ -19,7 +19,7 @@ spec:
         value: "yup2"
     image:
       repository: ghcr.io/6j0-org/app1 # {"$imagepolicy": "flux-system:app1:name"}
-      tag: dev-90d2894-1739391605 # {"$imagepolicy": "flux-system:app1:tag"}
+      tag: dev-327f4fc-1742332704 # {"$imagepolicy": "flux-system:app1:tag"}
       #    imagePullSecrets:
       #      - name: gitlab-auth
     ingress:
