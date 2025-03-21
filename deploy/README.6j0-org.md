@@ -2,7 +2,9 @@
 
 This repo was created from https://github.com/fluxcd/flux2-kustomize-helm-example/tree/main.
 
-1. [Opt into fine-grained personal access tokens for your organization](https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organizationi)
+It uses this as well: https://fluxcd.io/flux/guides/image-update/
+
+1. [Opt into fine-grained personal access tokens for your organization](https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization)
 1. [Enable deploy keys for this repo](https://github.com/organizations/6j0-org/settings/deploy_keys)
 1. Create a [Fine-grained personal access token](https://github.com/settings/tokens?type=beta) with full access to this git repository.
 1. Create some environment variables:
