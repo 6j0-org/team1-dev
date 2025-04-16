@@ -47,7 +47,7 @@ k config use-context "kind-${kind_cluster_name}"
    ```
 1. Pull the changes that flux just made:
    ```
-   git pull
+   git pull github.com main
    ```
 1. TODO: Should we create a user to create the GitHub App? Whoever creates the app can delete it and affect everything that's using it.
 1. Create a new GitHub App by going to https://github.com/settings/apps/new
@@ -62,13 +62,13 @@ k config use-context "kind-${kind_cluster_name}"
 1. Under https://github.com/settings/apps/fluxcd-io, scroll to the bottom and click "Generate a private key". This will automatically download a `.pem` file.
 1. Go to https://github.com/settings/apps/fluxcd-io/installations and install the app to your organization.
    - Only select repositories: select your flux repo.
-1. After installing the app, look in the URL bar - the Installation ID will be at the end of the URL, e.g., https://github.com/organizations/6j0-org/settings/installations/63024675
+1. After installing the app, look in the URL bar - the Installation ID will be at the end of the URL, e.g., https://github.com/organizations/6j0-org/settings/installations/63073577
 1. Create a flux secret: https://fluxcd.io/flux/cmd/flux_create_secret_githubapp/
    ```
    flux create secret githubapp ghapp-secret \
      --app-id=1187455 \
      --app-installation-id=63073577 \
-     --app-private-key="${HOME}/Downloads/fluxcd-io.2025-03-21.private-key.pem"
+     --app-private-key="${HOME}/Downloads/fluxcd-io.2025-04-15.private-key.pem"
    ```
 1. Per https://fluxcd.io/blog/2025/02/flux-v2.5.0/#github-app-authentication-for-git-repositories, change the secretRef in your gotk-sync.yaml GitRepository object. Also, undocumented, change the `.spec.url` to the https URL for the repo (e.g., https://github.com/6j0-org/team1-dev.git), and add `.spec.provider: github`. Here's a one-liner:
    ```
@@ -78,7 +78,7 @@ k config use-context "kind-${kind_cluster_name}"
    ```
    git add deploy/flux-system/gotk-sync.yaml
    git commit -m 'Switching to GitHub App'
-   git push
+   git push github.com main
    k apply -f deploy/flux-system/gotk-sync.yaml
    ```
 1. Delete the PAT you created. You won't need it again unless you are trying to upgrade flux, because flux can't bootstrap with a GitHub App alone yet...
