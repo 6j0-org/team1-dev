@@ -7,7 +7,7 @@ metadata:
 spec:
   filterTags:
     extract: $ts
-    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+    pattern: ^main-[a-f0-9]+-(?P<ts>[0-9]+)
   imageRepositoryRef:
     name: app1
     namespace: flux-system
