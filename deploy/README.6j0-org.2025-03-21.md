@@ -14,7 +14,7 @@ export KUBECONFIG=$(find "${HOME}/.kube" -maxdepth 1 -type f ! -name config | tr
 > deploy/flux-system/gotk-components.yaml
 > deploy/flux-system/gotk-components.yaml
 git commit -am "Truncating files"
-git push
+git push github.com main
 ```
 
 ### Create cluster
